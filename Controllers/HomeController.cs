@@ -10,28 +10,23 @@ namespace FinDash.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        [HttpGet("")]
+        public IActionResult Login()
         {
             return View();
         }
 
-        public IActionResult About()
+        [HttpGet("register")]
+        public IActionResult Register()
         {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
-        public IActionResult Contact()
+        [HttpGet("logout")]
+        public IActionResult Logout()
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

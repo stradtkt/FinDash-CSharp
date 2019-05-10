@@ -4,6 +4,7 @@
     <e p="C:\Users\Kevin\.Rider2019.1\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Kevin\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_FinDash.1023298865.00" t="ExcludeRecursive" />
     <e p="C:\Users\Kevin\Desktop\development\fin_dash\FinDash" t="IncludeRecursive">
+      <e p=".gitignore" t="Include" />
       <e p="app.config" t="Include" />
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
@@ -43,10 +44,11 @@
           <e p="About.cshtml" t="Include" />
           <e p="Contact.cshtml" t="Include" />
           <e p="Index.cshtml" t="Include" />
+          <e p="Login.cshtml" t="Include" />
           <e p="Privacy.cshtml" t="Include" />
+          <e p="Register.cshtml" t="Include" />
         </e>
         <e p="Shared" t="Include">
-          <e p="_CookieConsentPartial.cshtml" t="Include" />
           <e p="_Layout.cshtml" t="Include" />
           <e p="_ValidationScriptsPartial.cshtml" t="Include" />
           <e p="Error.cshtml" t="Include" />
