@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FinDash.Models;
 using Microsoft.AspNet.Identity;
@@ -27,12 +26,14 @@ namespace FinDash.Controllers
         [HttpGet("")]
         public IActionResult Login()
         {
+            ViewBag.user = ActiveUser.UserId;
             return View();
         }
 
         [HttpGet("register")]
         public IActionResult Register()
         {
+            ViewBag.user = ActiveUser.UserId;
             return View();
         }
 
@@ -106,8 +107,27 @@ namespace FinDash.Controllers
         [HttpGet("dashboard")]
         public IActionResult Dashboard()
         {
+            ViewBag.user = ActiveUser.UserId;
             return View();
         }
+
+        [HttpGet("profit")]
+        public IActionResult Profit()
+        {
+            ViewBag.user = ActiveUser.UserId;
+            return View();
+        }
+
+        [HttpGet("expense")]
+        public IActionResult Expense()
+        {
+            ViewBag.user = ActiveUser.UserId;
+            return View();
+        }
+        
+        
+        
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

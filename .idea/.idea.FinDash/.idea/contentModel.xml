@@ -44,9 +44,11 @@
           <e p="About.cshtml" t="Include" />
           <e p="Contact.cshtml" t="Include" />
           <e p="Dashboard.cshtml" t="Include" />
+          <e p="Expense.cshtml" t="Include" />
           <e p="Index.cshtml" t="Include" />
           <e p="Login.cshtml" t="Include" />
           <e p="Privacy.cshtml" t="Include" />
+          <e p="Profit.cshtml" t="Include" />
           <e p="Register.cshtml" t="Include" />
         </e>
         <e p="Shared" t="Include">
