@@ -124,6 +124,57 @@ namespace FinDash.Controllers
             ViewBag.user = ActiveUser.UserId;
             return View();
         }
+
+        [HttpPost("add-expense")]
+        public IActionResult AddExpense(Expense expense)
+        {
+            if (ActiveUser == null)
+            {
+                return RedirectToAction("Login");
+            }
+
+            if (ModelState.IsValid)
+            {
+                Expense e = new Expense
+                {
+                    UserId = ActiveUser.UserId,
+                    Title = expense.Title,
+                    Description = expense.Description,
+                    Cost = expense.Cost
+                };
+                _context.Expenses.Add(e);
+                _context.SaveChanges();
+                return RedirectToAction("Dashboard");
+            }
+
+            return View("Expense");
+        }
+        
+        [HttpPost("add-profit")]
+        public IActionResult AddProfit(Profit profit)
+        {
+            if (ActiveUser == null)
+            {
+                return RedirectToAction("Login");
+            }
+
+            if (ModelState.IsValid)
+            {
+                Profit p = new Profit
+                {
+                    UserId = ActiveUser.UserId,
+                    Title = profit.Title,
+                    Description = profit.Description,
+                    Amount = profit.Amount
+                };
+                _context.Profits.Add(p);
+                _context.SaveChanges();
+                return RedirectToAction("Dashboard");
+            }
+
+            return View("Profit");
+        }
+        
         
         
         
