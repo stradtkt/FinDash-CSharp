@@ -6,6 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microsoft.AspNet.Identity" Version="3.0.0-rc1-final" />
+        <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.2" />
         <PackageReference Include="Microsoft.AspNetCore" Version="2.1.6" />
         <PackageReference Include="Microsoft.AspNetCore.CookiePolicy" Version="2.1.2" />
         <PackageReference Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.1.1" />
