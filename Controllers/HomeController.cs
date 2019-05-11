@@ -12,7 +12,7 @@ namespace FinDash.Controllers
 {
     public class HomeController : Controller
     {
-        private FinancialContext _context;
+        private readonly FinancialContext _context;
         public HomeController(FinancialContext context)
         {
             _context = context;
@@ -21,7 +21,7 @@ namespace FinDash.Controllers
         {
             get 
             {
-                return _context.Users.Where(u => u.UserId == HttpContext.Session.GetInt32("UserId")).FirstOrDefault();
+                return _context.Users.FirstOrDefault(u => u.UserId == HttpContext.Session.GetInt32("UserId"));
             }
         }
         [HttpGet("")]
@@ -40,8 +40,7 @@ namespace FinDash.Controllers
         public IActionResult RegisterUser(RegisterUser newuser)
         {
             User CheckEmail = _context.Users
-                .Where(u => u.Email == newuser.Email)
-                .SingleOrDefault();
+                .SingleOrDefault(u => u.Email == newuser.Email);
 
             if(CheckEmail != null)
             {
